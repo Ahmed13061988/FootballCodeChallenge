@@ -60,4 +60,4 @@ const goals = game.scored;
 
 printGoals(...goals);
 
-console.log(game.team2 && game.team1);
+team1 < team2 && console.log("Team 1 is more likely to win");
