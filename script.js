@@ -73,9 +73,9 @@ function printGoals(...playerNames) {
   console.log(`${playerNames}, they scored ${playerNames.length} goals`);
 }
 
-const winner = game.team1 < game.team2 || game.team1 > game.team2;
-
 printGoals("Davies", "Muller", "Lewandowski", "Kimmich");
 const goals = game.scored;
 
 printGoals(...goals);
+
+console.log(game.team2 && game.team1);
