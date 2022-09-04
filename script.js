@@ -47,7 +47,7 @@ let fieldPlayersTeam1 = [];
 
 for (let i = 0; i < players1.length; i++) {
   if (i === 0) {
-    gkTeam1 += players1[i];
+    gkTeam1 = players1[i];
   } else {
     fieldPlayersTeam1.push(players1[i]);
   }
@@ -56,3 +56,15 @@ for (let i = 0; i < players1.length; i++) {
 const allPlayers = [...players1, ...players2];
 
 const players1Final = [...players1, "Thiago", "Coutinho", "Perisic"];
+
+const team1 = game.odds.team1;
+const team2 = game.odds.team2;
+const draw = game.odds.x;
+
+function printGoals(...playerNames) {
+  console.log(`${playerNames}, they scored ${playerNames.length} goals`);
+}
+
+const winner = game.team1 < game.team2 || game.team1 > game.team2;
+
+printGoals("Davies", "Muller", "Lewandowski", "Kimmich");
