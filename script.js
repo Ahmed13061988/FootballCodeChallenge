@@ -53,4 +53,6 @@ for (let i = 0; i < players1.length; i++) {
   }
 }
 
-const allPlayers = [players1, players2];
+const allPlayers = [...players1, ...players2];
+
+const players1Final = [...players1, "Thiago", "Coutinho", "Perisic"];
