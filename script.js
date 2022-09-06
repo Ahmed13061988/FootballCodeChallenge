@@ -77,4 +77,17 @@ for (const y of avarage) {
 
 console.log(avarageSum);
 
-const oddsNice = Object.entries(game.odds);
+const oddsNice = Object.values(game.odds);
+
+for (const value of oddsNice) {
+  value === 1.33 && console.log(`Odd of victory ${game.team1}: ${value}`);
+  value === 3.25 && console.log(`Odd of draw: ${value}`);
+  value === 6.5 && console.log(`Odd of victory ${game.team2}: ${value}`);
+}
+
+// const scores2 = Object.entries(game.scored);
+// let score1 = {};
+
+// for ( let i = 0; i < scores2; i++){
+
+// }
