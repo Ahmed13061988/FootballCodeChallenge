@@ -39,25 +39,42 @@ const game = {
   },
 };
 
-const [players1, players2] = game.players;
+// const [players1, players2] = game.players;
 
-const [gk, ...filedPlayers] = players1;
+// const [gk, ...filedPlayers] = players1;
 
-const allPlayers = [...players1, ...players2];
+// const allPlayers = [...players1, ...players2];
 
-const players1Final = [...players1, "Thiago", "Coutinho", "Perisic"];
+// const players1Final = [...players1, "Thiago", "Coutinho", "Perisic"];
 
-const {
-  odds: { team1, x: draw, team2 },
-} = game;
+// const {
+//   odds: { team1, x: draw, team2 },
+// } = game;
 
-function printGoals(...playerNames) {
-  console.log(`${playerNames}, they scored ${playerNames.length} goals`);
+// function printGoals(...playerNames) {
+//   console.log(`${playerNames}, they scored ${playerNames.length} goals`);
+// }
+
+// printGoals("Davies", "Muller", "Lewandowski", "Kimmich");
+// const goals = game.scored;
+
+// printGoals(...goals);
+
+// team1 < team2 && console.log("Team 1 is more likely to win");
+
+const scores = Object.entries(game.scored);
+
+for (const [key, value] of scores) {
+  console.log(`Goal ${Number(key) + 1}: ${value}`);
 }
 
-printGoals("Davies", "Muller", "Lewandowski", "Kimmich");
-const goals = game.scored;
+const avarage = Object.values(game.odds);
+let avarageSum = 0;
 
-printGoals(...goals);
+for (const y of avarage) {
+  avarageSum += y / 3;
+}
 
-team1 < team2 && console.log("Team 1 is more likely to win");
+console.log(avarageSum);
+
+const oddsNice = Object.entries(game.odds);
