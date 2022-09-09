@@ -62,32 +62,74 @@ const game = {
 
 // team1 < team2 && console.log("Team 1 is more likely to win");
 
-const scores = Object.entries(game.scored);
+// const scored = Object.entries(game.scored);
 
-for (const [key, value] of scores) {
-  console.log(`Goal ${Number(key) + 1}: ${value}`);
-}
-
-const avarage = Object.values(game.odds);
-let avarageSum = 0;
-
-for (const y of avarage) {
-  avarageSum += y / 3;
-}
-
-console.log(avarageSum);
-
-const oddsNice = Object.values(game.odds);
-
-for (const value of oddsNice) {
-  value === 1.33 && console.log(`Odd of victory ${game.team1}: ${value}`);
-  value === 3.25 && console.log(`Odd of draw: ${value}`);
-  value === 6.5 && console.log(`Odd of victory ${game.team2}: ${value}`);
-}
-
-// const scores2 = Object.entries(game.scored);
-// let score1 = {};
-
-// for ( let i = 0; i < scores2; i++){
-
+// for (const [key, value] of scored) {
+//   console.log(`Goal ${Number(key) + 1}: ${value}`);
 // }
+
+// const avarage = Object.values(game.odds);
+// let avarageSum = 0;
+
+// for (const y of avarage) {
+//   avarageSum += y / 3;
+// }
+
+// console.log(avarageSum);
+
+// const oddsNice = Object.entries(game.odds);
+
+// // for (const value of oddsNice) {
+// //   value === 1.33 && console.log(`Odd of victory ${game.team1}: ${value}`);
+// //   value === 3.25 && console.log(`Odd of draw: ${value}`);
+// //   value === 6.5 && console.log(`Odd of victory ${game.team2}: ${value}`);
+// // }
+
+// for (const [team, odd] of oddsNice) {
+//   const teamStr = team === "x" ? `Draw` : `victory ${game[team]}`;
+//   console.log(`Odd of ${teamStr}: ${odd} `);
+// }
+
+// const scorers = {};
+
+// for (let x of game.scored) {
+//   scorers[x]++ || (scorers[x] = 1);
+// }
+
+// console.log(scorers);
+
+// Challenge 3
+const gameEvents = new Map([
+  [17, "⚽ GOAL"],
+  [36, "🔄 Subtitution"],
+  [47, "⚽ GOAL"],
+  [61, "🔄 Subtitution"],
+  [64, "🟡 Yellow Card"],
+  [69, "🔴 red Card"],
+  [70, "🔄 Subtitution"],
+  [72, "🔄 Subtitution"],
+  [76, "⚽ GOAL"],
+  [80, "⚽ GOAL"],
+  [92, "🟡 Yellow Card"],
+]);
+
+const events = [...gameEvents.values()];
+
+const eventsSet = new Set(events);
+
+console.log(eventsSet);
+
+gameEvents.delete(64);
+
+console.log(gameEvents);
+
+for (const [key, value] of gameEvents) {
+  let half = "";
+  if (key <= 45) {
+    half = "[FIRST HALF]";
+    console.log(`${half}${key}: ${value}`);
+  } else {
+    half = "[SECOND HALF]";
+    console.log(`${half}${key}: ${value}`);
+  }
+}
