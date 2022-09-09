@@ -123,6 +123,23 @@ gameEvents.delete(64);
 
 console.log(gameEvents);
 
+// for (let i = 0; i < 10; i++) {
+//   console.log("Aneventhappened,on average, every 9 minutes");
+// }
+
+console.log(
+  `An event happened,on average, every ${90 / gameEvents.size} minutes`
+);
+
+const time = [...gameEvents.keys()].pop();
+
+// console.log(time);
+// const fullTime = time[time.length - 1];
+
+console.log(
+  `An event happened,on average, every ${time / gameEvents.size} minutes`
+);
+
 for (const [key, value] of gameEvents) {
   let half = "";
   if (key <= 45) {
